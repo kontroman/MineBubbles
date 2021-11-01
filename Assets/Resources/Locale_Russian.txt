@@ -1,0 +1,20 @@
+{
+	"score" : "Счет: ",
+	"removeAds" : "Удалить рекламу $3.99",
+	"sound" : "Звук",
+	"top10" : "Топ 10",
+	"rateGame" : "Оценить игру",
+	"hardmode" : "Сложный режим",
+	"restore" : "Восстановить покупки",
+	"candycat" : "Candy Cat Игра",
+	"backgound" : "Фон",
+	"close" : "Закрыть",
+	"ratePopup" : "Оцените игру",
+	"rate_neg" : "Нет, спасибо",
+	"rate_later" : "Спросить позже",
+	"newGame" : "Начать новую игру?",
+	"ok" : "OK",
+	"cancel" : "Отмена",
+	"gameover" : "Игра окончена",
+	"language" : "Язык"
+}

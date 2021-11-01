@@ -1,0 +1,20 @@
+{
+		"score" : "Pontuação: ",
+		"removeAds" : "Remover ADS $3.99",
+		"sound" : "Som",
+		"top10" : "Top10",
+		"rateGame" : "Taxa",
+		"hardmode" : "Modo difícil",
+		"restore" : "Restaurar compras",
+		"candycat" : "Candy Cat Game",
+		"backgound" : "Fundo",
+		"close" : "Perto",
+		"ratePopup" : "Taxa de jogo",
+		"rate_neg" : "Não, obrigado",
+		"rate_later" : "Pergunte mais tarde",
+		"newGame" : "Começar novo jogo?",
+		"ok" : "OK",
+		"cancel" : "Cancelar",
+		"gameover" : "Fim de jogo",
+	"language" : "Língua"
+}

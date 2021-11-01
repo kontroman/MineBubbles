@@ -1,0 +1,20 @@
+{
+		"score" : "Ergebnis: ",
+		"removeAds" : "Entfernen Sie ADS $3.99",
+		"sound" : "Klang",
+		"top10" : "Top10",
+		"rateGame" : "Rate",
+		"hardmode" : "Harter Modus",
+		"restore" : "Einkäufe wiederherstellen",
+		"candycat" : "Candy Cat Game",
+		"backgound" : "Hintergrund",
+		"close" : "Schließen",
+		"ratePopup" : "Rate Spiel",
+		"rate_neg" : "Nein danke",
+		"rate_later" : "Spater Nachfragen",
+		"newGame" : "Neues Spiel starten?",
+		"ok" : "OK",
+		"cancel" : "Stornieren",
+		"gameover" : "Spiel ist aus",
+	"language" : "Sprache"
+}
