@@ -59,6 +59,12 @@ public class GameConfig
         public const string BALL = "Ball";
     }
 
+    public static List<string> TexturePack = new List<string>
+    {
+        "DefaultPack",
+        "SecondPack"
+    };
+
     public enum Types
     {
         COLORED

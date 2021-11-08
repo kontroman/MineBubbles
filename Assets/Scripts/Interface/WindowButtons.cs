@@ -115,7 +115,7 @@ return;
         int languageIndex = PlayerPrefs.GetInt("languageIndex", 0);
 
         languageIndex++;
-        if (languageIndex >= 7) languageIndex = 0;
+        if (languageIndex >= 2) languageIndex = 0;
 
         string newLanguage = GetLanguage(languageIndex);
 
@@ -124,6 +124,26 @@ return;
         PlayerPrefs.SetInt("languageIndex", languageIndex);
 
         Flags.Instance.UpdateFlag(GetLanguage(languageIndex));
+    }
+
+    public void UpdateTexteurePack()
+    {
+        int texturePackIndex = PlayerPrefs.GetInt("TexturePackIndex", 1);
+        Debug.Log(texturePackIndex);
+        texturePackIndex++;
+        if (texturePackIndex >= 3) texturePackIndex = 1;
+        PlayerPrefs.SetInt("TexturePackIndex", texturePackIndex);
+
+        List<GameObject> balls = GridController.Instance.FindAllBallsOnLayer(GameConfig.Layers.DEFAULT);
+
+        foreach(GameObject ball in balls)
+        {
+            Image _image = ball.GetComponent<Image>();//беда тут
+            GameConfig.Colors _color = ball.GetComponent<BallController>().color;
+            _image.sprite = SpriteManager.Instance.LoadBall(_color);//или тут
+            Debug.Log(_color);
+        }
+        Debug.Log(texturePackIndex);
     }
 
     private string GetLanguage(int index)

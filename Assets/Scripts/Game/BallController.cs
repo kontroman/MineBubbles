@@ -196,5 +196,4 @@ public class BallController : MonoBehaviour
     {
         this.Initialize(state.color, state.type);
     }
-
 }

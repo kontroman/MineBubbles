@@ -273,6 +273,7 @@ public class GridController : MonoBehaviour
 
         return balls.Where(b => b.layer == index).ToList();
     }
+
     public GridState SaveState()
     {
         var balls = new List<List<BallState>>();
