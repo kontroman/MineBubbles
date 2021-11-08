@@ -1,39 +1,47 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
-public class LocaleText : MonoBehaviour {
-
+public class LocaleText : MonoBehaviour
+{
     [SerializeField]
     private string textID;
-    [SerializeField]
+
     private bool autoUpdate = true;
+
     private Text textComponent;
+    private LocalizationManager _manager;
 
-    private void Awake () 
+    private void Awake()
     {
-        textComponent = GetComponent<Text>();
-
-        if (autoUpdate == true) {
-            LocalizationManager.Instance.languageChanged += UpdateLocale;
+        if (TryGetComponent(out Text text))
+        {
+            textComponent = text;
         }
+
+        _manager = GameObject.Find("EventSystem").GetComponent<LocalizationManager>();
+
+        if (autoUpdate)
+            _manager.languageChanged += UpdateLocale;
     }
 
-    private void Start () {
+    private void Start()
+    {
         UpdateLocale();
     }
 
-    public void UpdateLocale () {
-        try {
-            string response = LocalizationManager.Instance.GetText(textID);
-            if (response != null) {
-                Debug.LogError("NOT NULL SOOKA: " + GetComponent<Text>().text);
-                GetComponent<Text>().text = response;
-            }
+    public void UpdateLocale()
+    {
+        try
+        {
+            string response = _manager.GetText(textID);
+            if (response != null && textComponent != null)
+                textComponent.text = response;
         }
-        catch (NullReferenceException e) {
-            Debug.LogError("NOT NULL SOOKA: " + GetComponent<Text>().text);
+        catch (NullReferenceException e)
+        {
             Debug.Log(e);
         }
     }

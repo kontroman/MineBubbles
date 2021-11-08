@@ -13,6 +13,7 @@ public class BallController : MonoBehaviour
     private GameObjectDelegate _onCollisionCallback;
     private List<Collider2D> _cells = new List<Collider2D>();
     private Image _image;
+    private RectTransform rect;
 
     public bool stationary = false;
     public GameConfig.Types type { get; private set; }
@@ -35,9 +36,12 @@ public class BallController : MonoBehaviour
         this._image = GetComponent<Image>();
         this.color = color;
         this.type = type;
+        this.rect = GetComponent<RectTransform>();
         this.gameObject.name = GameConfig.ColorNames[(int)color];
 
         this._image.sprite = SpriteManager.Instance.LoadBall(color);
+
+        this.rect.sizeDelta = new Vector2(rect.sizeDelta.x * 1.363f, rect.sizeDelta.y * 1.363f);
     }
 
     public List<Collider2D> GetNeighbors()
@@ -128,6 +132,7 @@ public class BallController : MonoBehaviour
     {
         this._image.sprite = SpriteManager.Instance.LoadBall(color);
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         _cells.Add(other);

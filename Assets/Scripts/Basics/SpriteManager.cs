@@ -17,6 +17,11 @@ public class SpriteManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void ChangeDirectory()
+    {
+        _dir = "Balls/TexturePacks/" + (PlayerPrefs.GetInt("TexturePackIndex", 1)).ToString();
+    }
+
     public Sprite LoadBall(GameConfig.Colors color)
     {
         return Resources.Load<Sprite>(_dir + "/" + GameConfig.ColorNames[(int)color]);

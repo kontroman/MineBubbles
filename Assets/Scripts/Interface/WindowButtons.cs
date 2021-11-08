@@ -129,21 +129,23 @@ return;
     public void UpdateTexteurePack()
     {
         int texturePackIndex = PlayerPrefs.GetInt("TexturePackIndex", 1);
-        Debug.Log(texturePackIndex);
+
         texturePackIndex++;
+
         if (texturePackIndex >= 3) texturePackIndex = 1;
+
         PlayerPrefs.SetInt("TexturePackIndex", texturePackIndex);
 
         List<GameObject> balls = GridController.Instance.FindAllBallsOnLayer(GameConfig.Layers.DEFAULT);
 
-        foreach(GameObject ball in balls)
+        SpriteManager.Instance.ChangeDirectory();
+
+        foreach (GameObject ball in balls)
         {
-            Image _image = ball.GetComponent<Image>();//беда тут
-            GameConfig.Colors _color = ball.GetComponent<BallController>().color;
-            _image.sprite = SpriteManager.Instance.LoadBall(_color);//или тут
-            Debug.Log(_color);
+            ball.GetComponent<BallController>().LoadNewSprite(
+                ball.GetComponent<BallController>().color
+                );
         }
-        Debug.Log(texturePackIndex);
     }
 
     private string GetLanguage(int index)
