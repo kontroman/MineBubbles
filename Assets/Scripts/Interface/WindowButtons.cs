@@ -8,6 +8,8 @@ using System.Linq;
 
 public class WindowButtons : MonoBehaviour
 {
+
+    BallQueueController queueController;
     public void Start()
     {
         SetupWindosState();
@@ -146,6 +148,17 @@ return;
                 ball.GetComponent<BallController>().color
                 );
         }
+
+         GameObject gunBall = GunController.Instance._heldBall;
+         gunBall.GetComponent<BallController>().LoadNewSprite(
+               gunBall.GetComponent<BallController>().color
+             );
+
+        GameObject _ball = GunController.Instance._queueController._cells.Find(c => c.transform.childCount == 1);
+        BallController bc = _ball.GetComponentInChildren<BallController>();
+        bc.GetComponent<BallController>().LoadNewSprite(
+               bc.GetComponent<BallController>().color
+             );
     }
 
     private string GetLanguage(int index)

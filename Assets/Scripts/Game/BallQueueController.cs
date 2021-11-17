@@ -20,7 +20,7 @@ public class BallQueueController
     private GameObject _ballPrefab;
     private GameObject _cellPrefab;
 
-    private List<GameObject> _cells = new List<GameObject>();
+    public List<GameObject> _cells = new List<GameObject>();
     private List<GameConfig.Colors> availableColors;
     private int _currentCellsCount = GameConfig.DEFAULT_QUEUE_BALL_COUNT;
     private int _cellLimit = GameConfig.DEFAULT_QUEUE_BALL_COUNT;

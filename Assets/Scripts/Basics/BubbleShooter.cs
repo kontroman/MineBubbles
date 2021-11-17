@@ -19,6 +19,7 @@ public class BubbleShooter : MonoBehaviour
     public GameObject restartButton;
     public GameObject settingsButton;
     public GameObject scoreText;
+    public GameObject border;
     #endregion
 
     private ILayout _layout;
@@ -48,7 +49,8 @@ public class BubbleShooter : MonoBehaviour
             resetButton,
             restartButton,
             settingsButton,
-            scoreText
+            scoreText,
+            border
         );
 
         _historyHolder = new HistoryHolder();

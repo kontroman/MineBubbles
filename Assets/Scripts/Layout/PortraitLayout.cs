@@ -15,6 +15,7 @@ public class PortraitLayout : ILayout
     private GameObject _restartButton;
     private GameObject _settingsButton;
     private GameObject _scoreText;
+    private GameObject _border;
 
     public PortraitLayout(
         GameObject canvas,
@@ -27,7 +28,8 @@ public class PortraitLayout : ILayout
         GameObject resetButton,
         GameObject restartButton,
         GameObject settingsButton,
-        GameObject scoreText
+        GameObject scoreText,
+        GameObject border
         )
     {
         this._canvas = canvas;
@@ -41,6 +43,7 @@ public class PortraitLayout : ILayout
         this._restartButton = restartButton;
         this._settingsButton = settingsButton;
         this._scoreText = scoreText;
+        this._border = border;
     }
     private int CalculateRowCount()
     {
@@ -68,6 +71,7 @@ public class PortraitLayout : ILayout
         SetupGrid();
         SetupBallQueue();
         SetupIntefaceButtons();
+        SetupBorder();
     }
 
     private void SetupGunAnchor()
@@ -162,6 +166,12 @@ public class PortraitLayout : ILayout
         _settings.anchoredPosition = new Vector2(-_settings.sizeDelta.x * 1.5f - 20, _settings.sizeDelta.x / 2 + 10);
 
         _score.anchoredPosition = new Vector2(-110, _restart.sizeDelta.x + 50);
+    }
+
+    private void SetupBorder()
+    {
+        RectTransform _borderRT = _border.GetComponent<RectTransform>();
+        _borderRT.anchoredPosition = new Vector2(0, -(2 * GameConfig.BALL_RADIUS * (GameConfig.START_ROW_COUNT - 1)));
     }
 
     public Vector2 ScreenScale()

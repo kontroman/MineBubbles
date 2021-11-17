@@ -16,7 +16,8 @@ public static class LayoutFactory
         GameObject resetButton,
         GameObject restartButton,
         GameObject settingsButton,
-        GameObject scoreText
+        GameObject scoreText,
+        GameObject border
         )
     {
         if (Mathf.Abs(Camera.main.aspect - 0.75f) < 0.0001f) //if tablet
@@ -32,7 +33,8 @@ public static class LayoutFactory
                 resetButton,
                 restartButton,
                 settingsButton,
-                scoreText
+                scoreText,
+                border
                 );
         }
         else
@@ -47,7 +49,8 @@ public static class LayoutFactory
                 resetButton,
                 restartButton,
                 settingsButton,
-                scoreText
+                scoreText,
+                border
                 );
 
     }

@@ -30,7 +30,7 @@ public class GunController : MonoBehaviour
     #region OtherVariables
     private GameObject _canvas;
     private RayRenderer _rayRenderer;
-    private BallQueueController _queueController;
+    public BallQueueController _queueController;
     private GridController _gridController;
     private BubbleShooter _bubbleShooter;
     private SaveStateDelegate _saveState;

@@ -15,8 +15,9 @@ public class PhoneLayout : PortraitLayout
         GameObject resetButton,
         GameObject restartButton,
         GameObject settingsButton,
-        GameObject scoreText
-        ) : base(canvas, grid, ceiling, leftWall, rightWall, gunAnchor, ballQueue,resetButton, restartButton, settingsButton, scoreText)
+        GameObject scoreText,
+        GameObject border
+        ) : base(canvas, grid, ceiling, leftWall, rightWall, gunAnchor, ballQueue,resetButton, restartButton, settingsButton, scoreText, border)
     {
         GameConfig.START_FILLER_ROW = 12;
         GameConfig.MAX_BALL_IN_ROW = 13;
